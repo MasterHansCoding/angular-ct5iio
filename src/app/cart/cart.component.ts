@@ -12,7 +12,7 @@ export class CartComponent implements OnInit {
 
   checkoutForm = this.formBuilder.group({
     name: '',
-    address: ''
+    address: '',
   });
 
   constructor(
@@ -26,6 +26,7 @@ export class CartComponent implements OnInit {
     // Process checkout data here
     this.items = this.cartService.clearCart();
     console.warn('Your order has been submitted', this.checkoutForm.value);
+    window.alert(this.checkoutForm.value);
     this.checkoutForm.reset();
   }
 }
